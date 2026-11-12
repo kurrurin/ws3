@@ -1,0 +1,600 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+
+/*-- Theme Settings ---------------------------*/
+
+  body { 
+    opacity: 0;
+    transition: opacity 0.5s;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--mainColor);
+    background-image: var(--bgImg);
+    background-color: #030725;
+
+    --marginWidth: 20vw;
+    --circleDiam: 20vw;
+  }
+
+      /* Substyles */
+
+        body.darkbg {
+          --bgImg: url("./pwBG.jpg");
+          --mainColor: #F5F5F5;
+          --oppositeColor: #16161D;
+          --subColor: #8E8E8E;
+          --accentColor: #0099FF;
+        }
+
+        body.lightbg {
+          --bgImg: url("./pwBG.jpg");
+          --mainColor: #16161D;
+          --oppositeColor: #F5F5F5;
+          --subColor: #4F4F4F;
+          --accentColor: #E13700;
+        }
+
+        body.push {
+          opacity: 1;
+          margin: 0;
+          height: 100dvh;
+          width: 100%;
+          overflow: hidden;
+          position: fixed;
+          top: 0;
+        }
+
+
+  .subcolor {
+    color: var(--subColor);
+  }
+
+  .accentcolor {
+    color: var(--accentColor);
+  }
+
+  ::selection {
+    background: var(--mainColor);
+    color: var(--oppositeColor);
+  }
+
+
+  /* Page Loader */
+
+    .js .loading::before,
+    .js .loading::after {
+      content: '';
+      position: fixed;
+      z-index: 1000;
+    }
+
+    .js .loading::before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-bg);
+    }
+
+    .js .loading::after {
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      margin: -30px 0 0 -30px;
+      border-radius: 50%;
+      opacity: 0.4;
+      background: var(--color-link);
+      animation: loaderAnim 1.5s ease-in-out infinite alternate forwards
+
+    }
+
+    @keyframes loaderAnim {
+      0% {
+          transform: scaleX(0);
+          transform-origin: 0% 50%
+      }
+
+      50% {
+          transform: scaleX(1);
+          transform-origin: 0% 50%
+      }
+
+      50.1% {
+          transform: scaleX(1);
+          transform-origin: 100% 50%
+      }
+
+      to {
+          transform: scaleX(0);
+          transform-origin: 100% 50%
+      }
+    }
+
+
+
+/*-- Typography ---------------------------------*/
+
+  /* Imports */
+
+    @font-face {
+      font-family: "Aileron Thin";
+      src: url('../../../resources/fonts/Aileron-Thin.otf') format('opentype');
+    }
+
+    @font-face {
+      font-family: "Aileron Light";
+      src: url('../../../resources/fonts/Aileron-Light.otf') format('opentype');
+    }
+
+    @font-face {
+      font-family: "Aileron Semibold";
+      src: url('../../../resources/fonts/Aileron-SemiBold.otf') format('opentype');
+    }
+
+    @font-face {
+      font-family: "Bebas Neue";
+      src: url('../../../resources/fonts/BebasNeue-Bold.otf') format('opentype');
+    }
+
+
+  /* Font Classes */
+
+    body {
+      --fontThin: "Aileron Thin", sans-serif;;
+      --fontLight: "Aileron Light", sans-serif;;
+      --fontBold: "Aileron Semibold", sans-serif;;
+      --fontDisplay: "Bebas Neue", sans-serif;;
+
+      --heightTitle: 5rem;
+      --heightRegular: 2rem;
+
+      --sizeTitle: 4rem;
+      --sizeRegular: 1.4rem;
+      --sizeSmall: calc(var(--sizeRegular)*0.85);
+    }
+
+
+  /* Text Styles */
+
+    .maintitle {
+      font-family: var(--fontDisplay);
+      font-style: normal;
+      font-size: var(--sizeTitle);
+      font-kerning: normal;
+      letter-spacing: 0.05rem;
+      line-height: var(--heightTitle);
+    }
+
+    .minititle {
+      font-family: var(--fontDisplay);
+      font-style: normal;
+      font-size: calc(var(--sizeTitle)*0.38);
+      font-kerning: normal;
+      letter-spacing: 0.07rem;
+      line-height: 0;
+    }
+
+    .regtext {
+      font-family: var(--fontLight);
+      font-style: normal;
+    	font-size: var(--sizeRegular);
+    	font-kerning: normal;
+     	letter-spacing: 0.07rem;
+    	line-height: var(--heightRegular);
+    }
+
+    .smalltext {
+      font-family: var(--fontLight);
+      font-style: normal;
+      font-size: var(--sizeSmall);
+      font-kerning: normal;
+      letter-spacing: 0.07rem;
+      line-height: var(--heightRegular);
+    }
+
+    .navtext {
+      font-family: var(--fontDisplay);
+      font-style: normal;
+      font-size: calc(var(--sizeTitle)/3);
+      font-kerning: normal;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      line-height: var(--heightRegular);
+      opacity: 1;
+    }
+
+    .navdimmed {
+      opacity: 0.4;
+    }
+
+    .bolded {
+      font-family: var(--fontBold);
+    }
+
+    .prompt-height {
+      line-height: calc((var(--heightTitle)*0.93) + var(--sizeRegular));
+    }
+
+  /* Link Styles */
+
+    a {
+      font-family: inherit;
+      font-size: inherit;
+      text-decoration: none;
+      color: inherit;
+      border-bottom: 1px dotted;
+    }
+
+        /* Substyles */
+
+          a.ns {
+            font-family: inherit;
+            text-decoration: none;
+            font-size: inherit;
+            border-bottom: 0px;
+          }
+
+        /* Hover Effects */
+
+          a:hover {
+            color: var(--accentColor);
+          }
+
+
+
+/*-- CONTAINERS ---------------------------------*/
+
+  /* Overall Page */
+
+    .section {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .section-container {
+      position: fixed;
+        top:0;
+        left: var(--marginWidth);
+      display: block;
+      width: calc(100vw - (var(--marginWidth))*2);
+      height: 85vh;
+      overflow: hidden;
+    }
+
+    .nav-left {
+      position: fixed;
+      display: block;
+      top: 0;
+      left: 0;
+      width: calc(var(--marginWidth)/2);
+      padding-right: calc(var(--marginWidth)/2);
+      height: 100vh;
+      align-content: center;
+    }
+
+    .nav-right {
+      position: fixed;
+      display: block;
+      top: 0;
+      right: 0;
+      width: calc(var(--marginWidth)/2);
+      padding-left: calc(var(--marginWidth)/2);
+      height: 100vh;
+      align-content: center;
+    }
+
+    .nav-bottom {
+      position: fixed;
+      display: grid;
+      grid-auto-flow: column;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      height: 15vh;
+      align-content: top;
+      justify-content: center;
+    }
+
+    .in-content {
+      position: absolute;
+      display: block;
+      padding-top: 22vh;
+      width: auto;
+      height: inherit;
+      overflow: scroll;
+    }
+
+      .visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .ghost {
+        display: none;
+      }
+
+      .padded {
+        padding: 30vh var(--marginWidth) 0 var(--marginWidth);
+      }
+
+      .gridded {
+        display: grid;
+        grid-auto-flow: column;
+      }
+
+      .float-right {
+        display: inline-block;
+        padding-left: 1rem;
+      }
+
+      .button {
+        color: var(--oppositeColor);
+        height: calc(var(--sizeTitle)*0.8);
+        align-content: center;
+        border-radius: 0.4rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background-color: var(--mainColor);
+      }
+
+      .button:hover {
+        color: var(--mainColor);
+        background-color: var(--oppositeColor);
+      }
+
+
+/*-- BUTTONS ---------------------------------*/
+
+/* Input Buttons */
+
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none; /* Safari support */
+  margin: 0 8px 0 0;
+  width: 1em;
+  height: 1em;
+  border: 1px solid var(--mainColor);
+  border-radius: 60%;
+}
+
+
+input[type="radio"]:checked {
+  background-color: var(--mainColor);
+}
+
+
+
+/*-- ANIMATIONS ---------------------------------*/
+  
+  /* Transition Speeds */
+
+    .slowease {
+      -webkit-transition: all 1.1s ease;  
+      -moz-transition: all 1.1s ease;  
+      -o-transition: all 1.1s ease;  
+      -ms-transition: all 1.1s ease;  
+      transition: all 1.1s ease;
+    }
+
+    .midease {
+      -webkit-transition: all 0.7s ease;  
+      -moz-transition: all 0.7s ease;  
+      -o-transition: all 0.7s ease;  
+      -ms-transition: all 0.7s ease;  
+      transition: all 0.7s ease;
+    }
+
+    .quickease {
+      -webkit-transition: all 0.4s ease;  
+      -moz-transition: all 0.4s ease;  
+      -o-transition: all 0.4s ease;  
+      -ms-transition: all 0.4s ease;  
+      transition: all 0.4s ease;
+    }
+
+    .pulsing-circle {
+      position: fixed;
+      top: calc((100vh/2) - ((var(--circleDiam))/2));
+      left: calc((100vw/2) - ((var(--circleDiam))/2));
+      width: var(--circleDiam);
+      height: var(--circleDiam);
+      border: 1px solid rgba(0, 123, 255, 255);
+      border-radius: 50%;
+
+      animation: ripple 4s infinite;
+
+    }
+
+        @keyframes ripple {
+          0% {
+            transform: scale(0.85);
+            box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.8);
+          }
+          70% {
+            transform: scale(1.2);
+            /* Expands the shadow outward up to 20px */
+            box-shadow: 0 0 0 60px rgba(0, 123, 255, 0);
+          }
+          100% {
+            transform: scale(0.85);
+            /* Expands the shadow outward up to 20px */
+            box-shadow: 0 0 0 0px rgba(0, 123, 255, 0);
+          }
+        }
+
+
+
+/*-- COLUMN PLUGIN ---------------------------------*/
+
+main.scrolling {
+	overflow: hidden;
+	position: relative;
+}
+
+main.scrolling::after {
+	content: '';
+	z-index: -100;
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50vh;
+}
+
+
+
+/*-- LOCOMOTIVE SCROLL -------------------------------*/
+
+/*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+
+html.has-scroll-smooth {
+	overflow: hidden;
+}
+
+html.has-scroll-dragging {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.has-scroll-smooth body {
+	overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+	min-height: 100vh;
+}
+
+[data-scroll-direction="horizontal"] [data-scroll-container] {
+	height: 100vh;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+[data-scroll-direction="horizontal"] [data-scroll-section] {
+	display: inline-block;
+	vertical-align: top;
+	white-space: nowrap;
+	height: 100%;
+}
+
+.c-scrollbar {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 0px;
+	height: 100%;
+	transform-origin: center right;
+	transition: transform 0.3s, opacity 0.3s;
+	opacity: 0;
+}
+
+.c-scrollbar:hover {
+	transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+	opacity: 1;
+}
+
+[data-scroll-direction="horizontal"] .c-scrollbar {
+	width: 100%;
+	height: 10px;
+	top: auto;
+	bottom: 0;
+	transform: scaleY(1);
+}
+
+[data-scroll-direction="horizontal"] .c-scrollbar:hover {
+	transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: black;
+	opacity: 0.5;
+	width: 0px;
+	border-radius: 10px;
+	margin: 2px;
+	cursor: -webkit-grab;
+	cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+
+[data-scroll-direction="horizontal"] .c-scrollbar_thumb {
+	right: auto;
+	bottom: 0;
+}
+
+/*# sourceMappingURL=index.14f68720.css.map */
+
+
+
+/*-- RESPONSIVE SETTINGS -----------------------------*/
+
+@media screen and (max-width: 600px) {
+
+
+/*-- MOBILE -------------------------*/
+
+  /*-- General ----------------------*/
+
+  body { 
+    --marginWidth: 12vw;
+  }
+
+
+  /*-- Typography ----------------------*/
+
+    .maintitle {
+      font-size: 3.0rem;
+      line-height: 4.0rem;
+    }
+
+    .cardtitle {
+      font-size: 2.0rem;
+      line-height: 2.0rem;
+    }
+
+    .regtext {
+      font-size: 1.2rem;
+      line-height: 2.0rem;
+    }
+
+    .smalltext {
+      font-size: 1.0rem;
+      line-height: 1.5rem;
+    }
+
+    .smalltext {
+      font-size: 0.8rem;
+      line-height: 1.0rem;
+    }
+
+

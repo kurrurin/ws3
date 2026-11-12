@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+
+<!-- START PAGE -------------------------------------------------------------->
+
+	<head>
+
+	<!-- Metadata ---------------------------------->
+
+		<meta charset="utf-8" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title id="tabTitle">&mdash;&mdash;</title>
+
+		<meta name="description" content="">
+
+		<meta name="keywords" content="">
+		
+		<meta name="author" content="">
+
+
+	<!-- Preloads ---------------------------------->
+
+		<!-- Important -->
+		<link rel="preload" href="../resources/imgs/alizade-dk.jpg" as="image" />
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="./ws3-fullscroll.css" />
+
+		<!-- Icon -->
+		<link rel="shortcut icon" href="../resources/imgs/favicon.svg" type="image/svg+xml"/>
+
+	</head>
+
+
+
+<!-- CONTENT -------------------------------------------------------------->
+
+<body class="darkbg loading">
+<main class="scrolling">
+
+	<div class="section">
+
+	<!-- Loading ---------------------------------->
+
+		<div class="section midease" id="loading" onclick="transitionLoading()">
+
+			<div class="section-container">
+				<div class="pulsing-circle">
+				</div>
+			</div>
+
+		</div>
+
+
+	<!-- Intro ---------------------------------->
+
+		<div class="section midease hidden" id="intro">
+
+			<!-- Section Nav -->
+
+			<div class="nav-right hidden" content="" id="start-survey">
+			</div>
+
+
+			<!-- Content -->
+
+			<div class="section-container">
+				<div class="in-content midease">
+					<span class="maintitle">
+						Hello.
+					</span><br><br>
+					<span class="regtext">
+						You are in the Foyer, the place you will return to between each experience.<br>
+						To navigate, tap the far right side of the screen to move forward and the far left side to move backward.<br><br>
+						Proceed when you are ready.
+					</span>
+				</div>
+			</div>
+
+		</div>
+
+
+	<!-- Survey Questions ---------------------------------->
+
+		<div class="section midease hidden" id="survey">
+
+			<!-- Section Nav -->
+
+			<div class="nav-left" content="" id="prev">
+			</div>
+
+			<div class="nav-right" content="" id="next">
+			</div>
+
+
+			<!-- Content -->
+
+			<div class="section-container midease">
+
+				<form id="survey-1">
+
+					<!-- Q1 -->
+
+					<div class="in-content midease gridded">
+						<span class="maintitle" id="q1-title">
+							Q1.
+						</span>
+						<div class="float-right">
+							<span class="regtext prompt-height bolded" id="q1-prompt">
+								In which room did you feel the most boundless?
+							</span>
+								<br><br>
+							<div id="q1-answer">
+								<input type="radio" id="a" name="Q1" value="Space.A">
+								<label for="a" class="regtext">Space.A</label><br>
+
+								<input type="radio" id="b" name="Q1" value="Space.B">
+								<label for="b" class="regtext">Space.B</label><br>
+
+								<input type="radio" id="c" name="Q1" value="Space.C">
+								<label for="c" class="regtext">Space.C</label>
+							</div>
+						</div>
+					</div>
+
+					<!-- Q2 -->
+
+					<div class="in-content midease gridded hidden">
+						<span class="maintitle" id="q2-title">
+							Q2.
+						</span>
+						<div class="float-right">
+							<span class="regtext prompt-height bolded" id="q2-prompt">
+								In which room did you feel the greatest sense of belonging?
+							</span>
+								<br><br>
+							<div>
+								<input type="radio" id="d" name="Q2" value="Space.A">
+								<label for="d" class="regtext">Space.A</label><br>
+
+								<input type="radio" id="e" name="Q2" value="Space.B">
+								<label for="e" class="regtext">Space.B</label><br>
+
+								<input type="radio" id="f" name="Q2" value="Space.C">
+								<label for="f" class="regtext">Space.C</label>
+							</div>
+						</div>
+					</div>
+
+					<!-- Q3 -->
+
+					<div class="in-content midease gridded hidden">
+						<span class="maintitle" id="q3-title">
+							Q3.
+						</span>
+						<div class="float-right">
+							<span class="regtext prompt-height bolded" id="q3-prompt">
+								Which room made you feel the most inspired to create?
+							</span>
+								<br><br>
+							<div>
+								<input type="radio" id="g" name="Q3" value="Space.A">
+								<label for="g" class="regtext">Space.A</label><br>
+
+								<input type="radio" id="h" name="Q3" value="Space.B">
+								<label for="h" class="regtext">Space.B</label><br>
+
+								<input type="radio" id="i" name="Q3" value="Space.C">
+								<label for="i" class="regtext">Space.C</label>
+							</div>
+						</div>
+					</div>
+
+					<!-- Q4 -->
+
+					<div class="in-content midease gridded hidden">
+						<span class="maintitle" id="q4-title">
+							Q4.
+						</span>
+						<div class="float-right">
+							<span class="regtext prompt-height bolded" id="q4-prompt">
+								In which room would you spend the most time?
+							</span>
+								<br><br>
+							<div>
+								<input type="radio" id="j" name="Q4" value="Space.A">
+								<label for="j" class="regtext">Space.A</label><br>
+
+								<input type="radio" id="k" name="Q4" value="Space.B">
+								<label for="k" class="regtext">Space.B</label><br>
+
+								<input type="radio" id="l" name="Q4" value="Space.C">
+								<label for="l" class="regtext">Space.C</label>
+							</div>
+						</div>
+					</div>
+
+				</form>
+
+			</div>
+
+
+			<!-- Survey Location Dots -->
+
+			<div class="nav-bottom midease" id="navBar">			
+				<div class="navtext quickease">
+					•
+				</div>
+				<div class="navtext quickease navdimmed">
+					•
+				</div>
+				<div class="navtext quickease navdimmed">
+					•
+				</div>
+				<div class="navtext quickease navdimmed">
+					•
+				</div>
+			</div>
+
+		</div>
+
+
+	<!-- Results ---------------------------------->
+
+		<div class="section midease hidden" id="result">
+
+			<!-- Section Nav -->
+
+			<div class="nav-left" content="" id="return-survey">
+			</div>
+
+
+			<!-- Content -->
+
+			<div class="section-container midease">
+				<div class="in-content midease">
+					<span class="maintitle">
+						Review
+					</span><br><br>
+
+					<span class="regtext">
+						You have reached the end of this survey. If you are satisfied with your responses below, tap the submit button at the end to complete this task.
+					</span><br><br><br><br>
+
+					<div id="survey-output"></div>
+
+				</div>
+			</div>
+
+
+			<div class="nav-bottom midease">
+				<div class="button minititle midease" onclick="submitSurvey()">
+					SUBMIT
+				</div>
+			</div>
+
+		</div>
+
+
+	<!-- Outtro ---------------------------------->
+
+		<div class="section midease hidden" id="outtro">
+
+			<!-- Content -->
+
+			<div class="section-container midease">
+				<div class="in-content midease">
+					<span class="maintitle">
+						Response recorded.
+					</span><br><br>
+
+					<span class="regtext">
+						Please proceed to the next room.
+					</span>
+
+				</div>
+			</div>
+
+		</div>
+
+
+	<!-- End Content ---------------------------------->
+
+	</div>
+</main>
+
+	<!-- Executables ---------------------------------->
+
+		<!-- General -->
+		<script src="./ws3.js" type="text/javascript"></script>
+
+		<!-- Custom Scroll Bar -->
+		<style>::-webkit-scrollbar { width: 0px;</style>
+
+
+<!-- END PAGE -------------------------------------------------------------->
+
+</body>
+</html>
