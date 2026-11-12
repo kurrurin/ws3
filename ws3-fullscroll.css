@@ -127,22 +127,22 @@
 
     @font-face {
       font-family: "Aileron Thin";
-      src: url('../../../resources/fonts/Aileron-Thin.otf') format('opentype');
+      src: url('./fonts/Aileron-Thin.otf') format('opentype');
     }
 
     @font-face {
       font-family: "Aileron Light";
-      src: url('../../../resources/fonts/Aileron-Light.otf') format('opentype');
+      src: url('./fonts/Aileron-Light.otf') format('opentype');
     }
 
     @font-face {
       font-family: "Aileron Semibold";
-      src: url('../../../resources/fonts/Aileron-SemiBold.otf') format('opentype');
+      src: url('./fonts/Aileron-SemiBold.otf') format('opentype');
     }
 
     @font-face {
       font-family: "Bebas Neue";
-      src: url('../../../resources/fonts/BebasNeue-Bold.otf') format('opentype');
+      src: url('./fonts/BebasNeue-Bold.otf') format('opentype');
     }
 
 
